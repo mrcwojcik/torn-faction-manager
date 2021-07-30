@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Clockwork Orange - members</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h1>Xanax usage - last 7 days from now</h1>
+<div class="row">
+    <div class="col-lg-10 mt-5 mb-5">
+        <table id="example" class="table is-bordered is-hoverable" style="width: 100%">
+            <thead>
+            <tr>
+                <th>lp</th>
+                <th>Member</th>
+                <th>Usage</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="xanax: ${xanaxs}">
+                <td th:text="${xanaxStat.index+1}"/>
+                <td th:text="${xanax.member}" />
+                <td th:text="${xanax.used}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
