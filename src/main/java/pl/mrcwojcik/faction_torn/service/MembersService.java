@@ -7,7 +7,7 @@ import java.util.List;
 public interface MembersService {
 
     List<Member> getMembersList();
-    void updateMembersRespect();
+    List<Member> updateMembersRespect();
     List<Member> sortMembersRespect();
     List<Member> getYeetList();
 }

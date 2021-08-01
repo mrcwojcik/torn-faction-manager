@@ -28,7 +28,7 @@ public class MembersServiceImpl implements MembersService {
     }
 
     @Override
-    public void updateMembersRespect() {
+    public List<Member> updateMembersRespect() {
         List<Member> memberList = getFullMemberList();
         for (Member m: memberList){
             m.setRpForFaction(getPersonalStats(m.getTornId()));
@@ -40,6 +40,8 @@ public class MembersServiceImpl implements MembersService {
             }
             memberRepository.save(m);
         }
+
+        return memberList;
     }
 
     @Override

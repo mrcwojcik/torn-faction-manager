@@ -36,14 +36,14 @@ public class FactionServiceImpl implements FactionService {
     public Faction updateFaction() {
         try {
             JSONObject json = readJson.readJsonFromUrl("https://api.torn.com/faction/?selections=&key=" + myApiKey);
-            saveFactionData(json);
+            return saveFactionData(json);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public void saveFactionData(JSONObject json){
+    public Faction saveFactionData(JSONObject json){
         Faction faction = new Faction();
         faction.setTorn_id(json.get("ID").toString());
         faction.setAge(json.get("age").toString());
@@ -53,6 +53,7 @@ public class FactionServiceImpl implements FactionService {
         factionRepository.save(faction);
         saveFactionMembers(json.getJSONObject("members"));
         clearMemberOutsideFaction(json.getJSONObject("members"));
+        return faction;
     }
 
     private void saveFactionMembers(JSONObject json) {
