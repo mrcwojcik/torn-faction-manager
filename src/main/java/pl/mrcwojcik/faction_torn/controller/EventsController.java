@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.mrcwojcik.faction_torn.models.entities.Event;
 import pl.mrcwojcik.faction_torn.service.EventService;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 @CrossOrigin
@@ -28,8 +28,15 @@ public class EventsController {
      * @return updated List<Event> */
     @GetMapping("/api/events/clear")
     public List<Event> deleteOldEvents(){
-        eventService.clearOldEvents(new Date());
+        eventService.clearOldEvents(Instant.now());
         return eventService.getAllEvents();
+    }
+
+    /** Return event closest to current time */
+    @GetMapping("/api/event/closest")
+    public Event getClosestEvent(){
+        eventService.clearOldEvents(Instant.now());
+        return eventService.getClosestEvent();
     }
 
     /** Endpoint with help to add new event to database

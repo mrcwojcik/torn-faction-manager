@@ -11,6 +11,7 @@ public class WebSecurityConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         cors.addMapping("/**")
-                .allowedOrigins("http://localhost:8081");
+                .allowedOrigins("http://localhost:8081")
+                .allowedOrigins("http://app.mrcwojcik.usermd.net");
     }
 }

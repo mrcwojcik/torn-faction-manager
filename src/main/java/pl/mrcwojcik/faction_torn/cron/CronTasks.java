@@ -6,7 +6,7 @@ import pl.mrcwojcik.faction_torn.service.EventService;
 import pl.mrcwojcik.faction_torn.service.FactionService;
 import pl.mrcwojcik.faction_torn.service.MembersService;
 
-import java.util.Date;
+import java.time.Instant;
 
 @Component
 public class CronTasks {
@@ -30,6 +30,6 @@ public class CronTasks {
     public void updateUsers(){
         factionService.updateFaction();
         membersService.updateMembersRespect();
-        eventService.clearOldEvents(new Date());
+        eventService.clearOldEvents(Instant.now());
     }
 }

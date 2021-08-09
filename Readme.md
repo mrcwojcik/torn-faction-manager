@@ -15,8 +15,8 @@ At the moment it's written directly for one faction.
 
 also if you want to start play Torn - here is my [ref link](https://www.torn.com/2514502).
 
-## Version History
+## Related projects
 
-* 0.1
-    * Initial Release
+* [Discord Bot](https://github.com/mrcwojcik/torn-discord-bot)
+* [Torn Faction Frontend App - Angular](https://github.com/mrcwojcik/torn-faction-frontend)
 

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.mrcwojcik.faction_torn.models.entities.Event;
 import pl.mrcwojcik.faction_torn.repositories.EventRepository;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -24,13 +24,17 @@ public class EventService {
         return eventRepository.findAll();
     }
 
-    public void clearOldEvents(Date date){
+    public void clearOldEvents(Instant now){
         List<Event> allEvents = eventRepository.findAll();
         for (Event ev : allEvents){
-            if (ev.getEventDate().before(date)){
+            if (ev.getEventDate().isBefore(now)){
                 eventRepository.delete(ev);
             }
         }
+    }
+
+    public Event getClosestEvent(){
+        return eventRepository.findFirstByOrderByEventDateAsc();
     }
 
 

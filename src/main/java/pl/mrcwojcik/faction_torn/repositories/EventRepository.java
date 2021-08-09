@@ -7,5 +7,6 @@ import pl.mrcwojcik.faction_torn.models.entities.Event;
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
 
+    Event findFirstByOrderByEventDateAsc();
 
 }

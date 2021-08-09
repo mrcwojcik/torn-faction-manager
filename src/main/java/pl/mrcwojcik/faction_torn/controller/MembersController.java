@@ -25,4 +25,9 @@ public class MembersController {
         return membersService.getMembersList();
     }
 
+    @GetMapping("/api/yeet")
+    public List<Member> getYeetList(){
+        return membersService.getYeetList();
+    }
+
 }

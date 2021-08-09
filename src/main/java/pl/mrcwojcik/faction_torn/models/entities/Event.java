@@ -1,7 +1,7 @@
 package pl.mrcwojcik.faction_torn.models.entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.Instant;
 
 @Entity
 @Table(name = "events")
@@ -13,7 +13,7 @@ public class Event {
 
     private String title;
     private String description;
-    private Date eventDate;
+    private Instant eventDate;
 
     public Long getId() {
         return id;
@@ -39,11 +39,11 @@ public class Event {
         this.description = description;
     }
 
-    public Date getEventDate() {
+    public Instant getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(Instant eventDate) {
         this.eventDate = eventDate;
     }
 }
