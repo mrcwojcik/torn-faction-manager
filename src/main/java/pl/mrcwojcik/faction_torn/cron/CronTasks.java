@@ -2,9 +2,9 @@ package pl.mrcwojcik.faction_torn.cron;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import pl.mrcwojcik.faction_torn.service.EventService;
-import pl.mrcwojcik.faction_torn.service.FactionService;
-import pl.mrcwojcik.faction_torn.service.MembersService;
+import pl.mrcwojcik.faction_torn.modules.events.services.EventService;
+import pl.mrcwojcik.faction_torn.modules.faction.services.FactionService;
+import pl.mrcwojcik.faction_torn.modules.members.services.MembersService;
 
 import java.time.Instant;
 
